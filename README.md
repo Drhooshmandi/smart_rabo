@@ -46,8 +46,8 @@ We encourage contributions to the SMART-RABO project. If you have an idea, bug f
 
 ## **License**
 
-SMART-RABO is released under the [MIT License](LICENSE). 
+SMART-RABO is released under the [SMART ROBOTICS License](LICENSE). 
 
 ---
 
-For more information, visit the [official documentation](link-to-docs) or join our [community forum](link-to-forum) to connect with other users and developers.
+For more information, visit the [official documentation](https://robohooshmand.ir/) or join our [community forum](https://robohooshmand.ir/) to connect with other users and developers.
