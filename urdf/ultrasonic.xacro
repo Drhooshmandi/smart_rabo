@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+
+
+
+
+
+
+
+
+    <!--  Led Left -->
+    <joint name="LedLeft_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="LedLeft_frame"/>
+        <origin xyz="0.05 0.03 0.03" rpy="0 1.57 0"/>
+    </joint>
+
+
+
+    <link name="LedLeft_frame">
+        <visual>
+            <geometry>
+                <cylinder radius="0.01" length="0.005"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.01" length="0.005"/>
+            </geometry>
+        </collision>
+        
+    </link>
+
+
+
+    <!--  Led Right -->
+    <joint name="LedRight_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="LedRight_frame"/>
+        <origin xyz="0.05 -0.03 0.03" rpy="0 1.57 0"/>
+    </joint>
+
+
+
+    <link name="LedRight_frame">
+        <visual>
+            <geometry>
+                <cylinder radius="0.01" length="0.005"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.01" length="0.005"/>
+            </geometry>
+        </collision>
+        
+    </link>
+
+
+
+
+    <!-- Front ultrasonic -->
+    <joint name="ultrasonic_jointF" type="fixed">
+        <parent link="base_link"/>
+        <child link="ultrasonic_frameF"/>
+        <origin xyz="0.05 0 0.03" rpy="0 0 0"/>
+    </joint>
+
+
+
+    <link name="ultrasonic_frameF">
+        <visual>
+            <geometry>
+                <cylinder radius="0.01" length="0.005"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.01" length="0.005"/>
+            </geometry>
+        </collision>
+        
+    </link>
+
+    <gazebo reference="ultrasonic_frameF">
+        <material>Gazebo/Blue</material>
+        <sensor name="laser" type="ray">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <min_angle>-0.01</min_angle>
+                        <max_angle>0.01</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.05</min>
+                    <max>1</max>
+                </range>
+            </ray>
+            <plugin name="laser_controller" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <argument>~/out:=scan</argument>
+                </ros>
+                <output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>ultrasonic_frameF</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+
+        <!-- Left ultrasonic -->
+    <joint name="ultrasonic_joint_L" type="fixed">
+        <parent link="base_link"/>
+        <child link="ultrasonic_frame_L"/>
+        <origin xyz="0.0 0.05 0.03" rpy="0 0 0"/>
+    </joint>
+
+
+
+    <link name="ultrasonic_frame_L">
+        <visual>
+            <geometry>
+                <cylinder radius="0.01" length="0.005"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.01" length="0.005"/>
+            </geometry>
+        </collision>
+        
+    </link>
+
+
+     <gazebo reference="ultrasonic_frame_L">
+        <material>Gazebo/Blue</material>
+        <sensor name="laser_2" type="ray">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <min_angle>1.56</min_angle>
+                        <max_angle>1.54</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.05</min>
+                    <max>1</max>
+                </range>
+            </ray>
+            <plugin name="laser_controller_L" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <argument>~/out:=scan_2</argument>
+                </ros>
+                <output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>ultrasonic_frame_L</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+
+
+
+        <!-- Right ultrasonic -->
+    <joint name="ultrasonic_joint_R" type="fixed">
+        <parent link="base_link"/>
+        <child link="ultrasonic_frame_R"/>
+        <origin xyz="0 -0.05 0.03" rpy="0 0 0"/>
+    </joint>
+
+
+
+    <link name="ultrasonic_frame_R">
+        <visual>
+            <geometry>
+                <cylinder radius="0.01" length="0.005"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.01" length="0.005"/>
+            </geometry>
+        </collision>
+        
+    </link>
+
+
+
+     <gazebo reference="ultrasonic_frame_R">
+        <material>Gazebo/Blue</material>
+        <sensor name="laser_3" type="ray">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <min_angle>-1.56</min_angle>
+                        <max_angle>-1.54</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.05</min>
+                    <max>1</max>
+                </range>
+            </ray>
+            <plugin name="laser_controller_3" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <argument>~/out:=scan_3</argument>
+                </ros>
+                <output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>ultrasonic_frame_R</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+
+
+
+
+</robot>
