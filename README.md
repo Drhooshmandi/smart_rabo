@@ -1,12 +1,11 @@
-# smart_rabo
-SMART-RABO: Open-Source Mobile Robot Platform
+# SMART-RABO: Open-Source Mobile Robot Platform
+
 SMART-RABO is an open-source mobile robot platform designed to be affordable, modular, and customizable. Leveraging the Microcontroller Robot Operating System (micro-ROS) and the ROS2 framework, SMART-RABO serves as an excellent learning tool for students, developers, and robotics enthusiasts.
 
-Key Features
+#Key Features
 Microcontroller: Powered by the ESP32 microcontroller, SMART-RABO seamlessly integrates into ROS2 systems, making it an ideal platform for various robotics applications.
 
-Core Components:
-
+#Core Components:
 Servo Pen Lifter: Enables precise plotting tasks.
 DC Motor with Encoder: Facilitates accurate wheel odometry localization.
 Distance Sensors: Supports obstacle avoidance and other navigation tasks.
@@ -18,7 +17,7 @@ Obstacle Avoidance: Equipped with distance sensors to navigate around obstacles.
 Demonstrations and Experiments
 SMART-RABO's capabilities have been validated through a series of experiments, including plotting tasks and wheel odometry localization. These demonstrations showcase the platform's potential in real-world applications and educational environments.
 
-Future Developments
+#Future Developments
 We have an exciting roadmap for SMART-RABO, which includes:
 
 Enhanced Visual Localization: Integration of RGB-D and infrared cameras for more advanced localization.
@@ -28,14 +27,12 @@ SMART-RABO is a community-driven project. We welcome contributions and collabora
 
 Join us in advancing the future of affordable, customizable robotics!
 
-Installation and Setup
-[Include instructions on how to clone the repository, set up the environment, and get SMART-RABO up and running.]
+#Installation and Setup
+Check movie
 
-Documentation
-[Provide links to detailed documentation, tutorials, and examples.]
 
-Contributing
+#Contributing
 We encourage contributions to the SMART-RABO project. If you have an idea, bug fix, or enhancement, feel free to open an issue or submit a pull request.
 
-License
-SMART-RABO is released under the MIT License.
+#License
+SMART-RABO is released under the SMART-ROBOTICS License.
