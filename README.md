@@ -2,7 +2,7 @@
 
 SMART-RABO is an open-source mobile robot platform designed to be affordable, modular, and customizable. Leveraging the Microcontroller Robot Operating System (micro-ROS) and the ROS2 framework, SMART-RABO serves as an excellent learning tool for students, developers, and robotics enthusiasts. 
 
-[Watch the demo video](https://github.com/yourusername/yourrepository/issues/1#issuecomment-1234567890)
+[Watch the demo video](https://github.com/user-attachments/assets/15c7d145-4c9a-4d42-88ea-cf2e4b693cf6)
 
 ## **Key Features**
 
